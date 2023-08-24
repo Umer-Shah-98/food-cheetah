@@ -61,13 +61,13 @@ const SignUp = () => {
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="exampleInputEmail1" className="form-label">
+            <label htmlFor="signUpInputEmail" className="form-label">
               Email address
             </label>
             <input
               type="email"
               className="form-control"
-              id="exampleInputEmail1"
+              id="signUpInputEmail"
               name="email"
               value={credentials.email}
               aria-describedby="emailHelp"
@@ -91,7 +91,7 @@ const SignUp = () => {
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="exampleInputPassword1" className="form-label">
+            <label htmlFor="location" className="form-label">
               Location
             </label>
             <input

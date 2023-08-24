@@ -1,36 +1,77 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import './navbar.css'
+import React from "react";
+import { Link, useNavigate } from "react-router-dom";
+import "./navbar.css";
 const Navbar = () => {
+  const navigate=useNavigate();
+
+  const handleLogout=()=>{
+    localStorage.removeItem("authToken");
+    navigate("./login")
+  }
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-success navbar">
-  <div className="container-fluid">
-    <Link className="navbar-brand fs-1 fst-italic" to="#">FoodDesk</Link>
-    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
-    </button>
-    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-        <li className="nav-item">
-          <Link className="nav-link" aria-current="page" to="#">Home</Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link" to="/login">Login</Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link" to="/newuser">Sign Up</Link>
-        </li>
-      </ul>
-      <form className="d-flex">
-        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button className="btn btn-outline-success" type="submit">Search</button>
-      </form>
-    </div>
-  </div>
-</nav>
-    </div>
-  )
-}
+        <div className="container-fluid">
+          <Link className="navbar-brand fs-1 fst-italic" to="#">
+            FoodDesk
+          </Link>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              <li className="nav-item">
+                <Link
+                  className="nav-link active fs-5"
+                  aria-current="page"
+                  to="/"
+                >
+                  Home
+                </Link>
+              </li>
+              {localStorage.getItem("authToken") ? (
+                <li className="nav-item">
+                  <Link
+                    className="nav-link active fs-5"
+                    aria-current="page"
+                    to="/"
+                  >
+                    My Orders
+                  </Link>
+                </li>
+              ) : (
+                ""
+              )}
+            </ul>
+            {!localStorage.getItem("authToken") ? (
+              <div className="d-flex">
+                <Link className="btn bg-white text-success mx-1" to="/login">
+                  Login
+                </Link>
 
-export default Navbar
+                <Link className="btn bg-white text-success mx-1" to="/newuser">
+                  Sign Up
+                </Link>
+              </div>
+            ) : (
+              <div>
+                <div className="btn bg-white text-success mx-2">My Cart</div>
+                <div className="btn bg-white text-danger mx-2" onClick={handleLogout}>Logout</div>
+              </div>
+            )}
+          </div>
+        </div>
+      </nav>
+    </div>
+  );
+};
+
+export default Navbar;
