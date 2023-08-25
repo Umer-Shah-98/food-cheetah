@@ -13,7 +13,7 @@ const Navbar = () => {
       <nav className="navbar navbar-expand-lg navbar-dark bg-success navbar">
         <div className="container-fluid">
           <Link className="navbar-brand fs-1 fst-italic" to="#">
-            FoodDesk
+            Food Cheetah
           </Link>
           <button
             className="navbar-toggler"
