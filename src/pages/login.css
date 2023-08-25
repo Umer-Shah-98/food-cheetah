@@ -1,0 +1,23 @@
+.container {
+margin-top: 20px;
+width: 200px;
+ border: 1px solid red;   
+padding-top: 30px;
+border-radius: 10px;
+}
+
+.sign-in-up {
+
+color: white;
+background-color: #ef3123;
+text-align: center;
+height: 60px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+padding-top: 10px;
+border-radius: 10px;
+margin-bottom: 20px;
+
+
+}

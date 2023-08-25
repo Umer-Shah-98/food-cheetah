@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import "./login.css";
+
+
 const Login = () => {
   let navigate=useNavigate();
   const [credentials, setCredentials] = useState({
@@ -42,11 +45,14 @@ const Login = () => {
 
   return (
     <>
+
+
       <div className="container">
         <form onSubmit={handleSubmit}>
+          <div className="sign-in-up"><h2>SIGN IN</h2></div>
           <div className="mb-3">
             <label htmlFor="exampleInputEmail1" className="form-label">
-              Email address
+              <span style={{color:'#ef3123', fontSize:'20px'}}> Email Address </span> 
             </label>
             <input
               type="email"
@@ -63,7 +69,7 @@ const Login = () => {
           </div>
           <div className="mb-3">
             <label htmlFor="exampleInputPassword1" className="form-label">
-              Password
+            <span style={{color:'#ef3123', fontSize:'20px'}}> Password </span>
             </label>
             <input
               type="password"

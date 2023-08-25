@@ -10,10 +10,10 @@ const Navbar = () => {
   }
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-success navbar">
+      <nav className="navbar navbar-expand-lg navbar-dark  navbar">
         <div className="container-fluid">
           <Link className="navbar-brand fs-1 fst-italic" to="#">
-            Food Cheetah
+            Food Cheetah 
           </Link>
           <button
             className="navbar-toggler"
@@ -54,11 +54,10 @@ const Navbar = () => {
             {!localStorage.getItem("authToken") ? (
               <div className="d-flex">
                 <Link className="btn bg-white text-success mx-1" to="/login">
-                  Login
-                </Link>
+                 Login                </Link>
 
-                <Link className="btn bg-white text-success mx-1" to="/newuser">
-                  Sign Up
+                <Link className="btn bg-white text-success mx-1"  to="/newuser">
+                Sign Up 
                 </Link>
               </div>
             ) : (
