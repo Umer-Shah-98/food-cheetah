@@ -34,6 +34,7 @@ const Login = () => {
       alert("Enter valid credentials, Try Again!!");
     }
     if(json.success){
+      localStorage.setItem("userEmail", credentials.email);
       localStorage.setItem("authToken", json.authToken);
       console.log(localStorage.getItem("authToken"));
       navigate("/");
@@ -52,12 +53,12 @@ const Login = () => {
           <div className="sign-in-up"><h2>SIGN IN</h2></div>
           <div className="mb-3">
             <label htmlFor="exampleInputEmail1" className="form-label">
-              <span style={{color:'#ef3123', fontSize:'20px'}}> Email Address </span> 
+              Email address
             </label>
             <input
               type="email"
               className="form-control"
-              id="exampleInputEmail1"
+              id="loginInputEmail1"
               name="email"
               value={credentials.email}
               aria-describedby="emailHelp"
@@ -69,12 +70,12 @@ const Login = () => {
           </div>
           <div className="mb-3">
             <label htmlFor="exampleInputPassword1" className="form-label">
-            <span style={{color:'#ef3123', fontSize:'20px'}}> Password </span>
+              Password
             </label>
             <input
               type="password"
               className="form-control"
-              id="exampleInputPassword1"
+              id="loginInputPassword1"
               name="password"
               value={credentials.password}
               onChange={onChange}

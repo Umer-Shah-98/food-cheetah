@@ -17,6 +17,32 @@ const reducer = (state, action) => {
           img: action.img,
         },
       ];
+    case "REMOVE":
+      let newArray = [...state];
+      newArray.splice(action.index, 1);
+      return newArray;
+    case "UPDATE":
+      let arr = [...state];
+      arr.find((food, index) => {
+        if (food.id === action.id) {
+          console.log(
+            food.quantity,
+            parseInt(action.quantity),
+            action.price + food.price
+          );
+          arr[index] = {
+            ...food,
+            quantity: parseInt(action.quantity) + food.quantity,
+            price: action.price + food.price,
+          };
+        }
+        return arr;
+      });
+      return arr;
+    case "DROP":
+      let empArray = [];
+      return empArray;
+
     default:
       console.log("Error in reducer.");
   }

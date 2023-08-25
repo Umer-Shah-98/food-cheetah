@@ -3,7 +3,7 @@ import "./card.css";
 import greenAvocado from "../../assets/green-avocado.jpg";
 import { useCart, useDispatchCart } from "../hooks/ContextReducer";
 const Card = (props) => {
-  const priceRef=useRef();
+  const priceRef = useRef();
   let options = props.options;
   let priceOptions = Object.keys(options);
   let dispatch = useDispatchCart();
@@ -12,6 +12,37 @@ const Card = (props) => {
   const [size, setSize] = useState("");
 
   const handleAddToCart = async () => {
+    let food = [];
+    for (const item of data) {
+      if (item.id === props.foodItem._id) {
+        food = item;
+        break;
+      }
+    }
+    if (food !== []) {
+      if (food.size === size) {
+        await dispatch({
+          type: "UPDATE",
+          id: props.foodItem._id,
+          // name: props.foodItem.name,
+          price: totalPrice,
+          quantity: quantity,
+          // size: size,
+        });
+        return;
+      } else if (food.size !== size) {
+        await dispatch({
+          type: "ADD",
+          id: props.foodItem._id,
+          name: props.foodItem.name,
+          price: totalPrice,
+          quantity: quantity,
+          size: size,
+        });
+        return
+      }
+      return
+    }
     await dispatch({
       type: "ADD",
       id: props.foodItem._id,
@@ -20,12 +51,12 @@ const Card = (props) => {
       quantity: quantity,
       size: size,
     });
-   await console.log(data);
+    // await console.log(data);
   };
   let totalPrice = quantity * parseInt(options[size]);
-  useEffect(()=>{
+  useEffect(() => {
     setSize(priceRef.current.value);
-  },[])
+  }, []);
   return (
     <div>
       <div className="card mt-3" style={{ width: "18rem" }}>
