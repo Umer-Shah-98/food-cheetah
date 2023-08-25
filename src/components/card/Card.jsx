@@ -58,8 +58,8 @@ const Card = (props) => {
     setSize(priceRef.current.value);
   }, []);
   return (
-    <div>
-      <div className="card mt-3" style={{ width: "18rem" }}>
+    <div style={{ width:'30rem'  }} >
+      <div className="card mt-3" style={{ width: "18rem", borderRadius:'10px',  }}>
         <img
           src={props.foodItem.img}
           className="card-img-top card-image"
@@ -68,11 +68,15 @@ const Card = (props) => {
         />
         <div className="card-body">
           <h5 className="card-title">{props.foodItem.name}</h5>
-          <div className="container w-100">
+          <div className="container w-100" style={{ display:"flex", paddingBottom:'30px'  }}>
+            
+            
+            
             <select
               name="food-quantity"
               id="food-quantity"
-              className="m-2 h-100 bg-success rounded"
+              className="m-2 h-100  rounded"
+              style={{backgroundColor:'#ef3123', color:'white'}}
               onChange={(event) => setQuantity(event.target.value)}
             >
               {Array.from(Array(6), (e, i) => {
@@ -87,6 +91,7 @@ const Card = (props) => {
               name="food-size"
               id="food-size"
               className="m-2 h-100  rounded"
+              style={{backgroundColor:'#ef3123', color:'white'}}
               ref={priceRef}
               onChange={(event) => setSize(event.target.value)}
             >
@@ -98,11 +103,12 @@ const Card = (props) => {
                 );
               })}
             </select>
-            <div className="total-price d-inline fs-5">Rs.{totalPrice}/=</div>
+            <div className="total-price d-inline fs-5" style={{ color:'red', paddingTop:'2px'}} >Rs.{totalPrice}/-</div>
           </div>
           <hr></hr>
           <button
-            className="btn btn-success justify-content-center mx-2"
+            className="btn  justify-content-center mx-2"
+            style={{backgroundColor:'#ef3123', color:'white'}}
             onClick={handleAddToCart}
           >
             Add to Cart

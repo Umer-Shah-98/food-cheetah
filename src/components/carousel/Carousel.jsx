@@ -9,18 +9,19 @@ const Carousel = () => {
     <div>
       <div
         id="carouselExampleFade"
-        className="carousel slide carousel-fade"
+        className="carousel slide "
         data-bs-ride="carousel"
         style={{objectFit:'contain !important'}}
       >
         <div className="carousel-inner" id="carousel">
-          <div className="carousel-caption" style={{zIndex:'10'}}>
-            <form className="d-flex">
+          <div className="carousel-caption" style={{zIndex:'0'}}>
+            <form className="d-flex" >
               <input
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
                 className="form-control me-2"
+                
               />
               <button className="btn btn-outline-success text-white bg-success" type="submit">
                 Search
@@ -28,13 +29,13 @@ const Carousel = () => {
             </form>
           </div>
           <div className="carousel-item active">
-            <img src={grilledChicken} className="d-block w-100 carousel-image" alt="..." style={{filter:"brightness(30%)"}}/>
+            <img src={grilledChicken} className="d-block w-100 carousel-image" alt="..." style={{filter:"brightness(90%)"}}/>
           </div>
           <div className="carousel-item">
-            <img src={chickenWings} className="d-block w-100 carousel-image" alt="..." style={{filter:"brightness(30%)"}}/>
+            <img src={chickenWings} className="d-block w-100 carousel-image" alt="..." style={{filter:"brightness(90%)"}}/>
           </div>
           <div className="carousel-item">
-            <img src={butterChicken} className="d-block w-100 carousel-image" alt="..." style={{filter:"brightness(30%)"}}/>
+            <img src={butterChicken} className="d-block w-100 carousel-image" alt="..." style={{filter:"brightness(90%)"}}/>
           </div>
         </div>
         <button

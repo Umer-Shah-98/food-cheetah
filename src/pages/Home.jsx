@@ -110,7 +110,7 @@ const Home = () => {
           </button>
         </div>
       </div>
-      <div className="container">
+      <div className="container" style={{  width:"200rem" }}>
         {foodCategory !== []
           ? foodCategory.map((data) => {
               return (
@@ -126,13 +126,15 @@ const Home = () => {
                       )
                       .map((filterItem) => {
                         return (
-                          <div
+                          <div 
                             key={filterItem._id}
                             className="col-12 col-md-6 col-lg-3"
+                            style={{marginRight:'20px'}} 
                           >
                             <Card
                               foodItem={filterItem}
                               options={filterItem.options[0]}
+                              style={{}}
                               
                             />
                           </div>

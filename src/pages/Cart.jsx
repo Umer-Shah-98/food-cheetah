@@ -42,19 +42,19 @@ export default function Cart() {
   return (
     <div>
       {console.log(data)}
-      <div className="container m-auto mt-5 table-responsive  table-responsive-sm table-responsive-md">
+      <div className="container m-auto mt-5 table-responsive  table-responsive-sm table-responsive-md" style={{ backgroundColor:"white"}}>
         <table className="table table-hover ">
-          <thead className=" text-success fs-4">
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Name</th>
-              <th scope="col">Quantity</th>
-              <th scope="col">Option</th>
-              <th scope="col">Amount</th>
+          <thead className="  fs-4">
+            <tr style={{ backgroundColor:"white"}}>
+              <th style={{ color:"red"}} scope="col">#</th>
+              <th style={{ color:"red"}} scope="col">Name</th>
+              <th style={{ color:"red"}}  scope="col">Quantity</th>
+              <th style={{color:"red"}} scope="col">Option</th>
+              <th style={{ color:"red"}} scope="col">Amount</th>
               <th scope="col"></th>
             </tr>
           </thead>
-          <tbody className="text-white">
+          <tbody className="text-red">
             {data.map((food, index) => (
               <tr key={index}>
                 <th scope="row">{index + 1}</th>
