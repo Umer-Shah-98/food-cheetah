@@ -13,8 +13,10 @@ const Navbar = () => {
       <nav className="navbar navbar-expand-lg navbar-dark  navbar">
         <div className="container-fluid">
           <Link className="navbar-brand fs-1 fst-italic" to="#">
-            Food Cheetah 
+          <h1> <span>Food</span>  <span>Cheetah</span>   </h1>  
           </Link>
+
+
           <button
             className="navbar-toggler"
             type="button"
@@ -53,10 +55,10 @@ const Navbar = () => {
             </ul>
             {!localStorage.getItem("authToken") ? (
               <div className="d-flex">
-                <Link className="btn bg-white text-success mx-1" to="/login">
+                <Link className="btn bg-white mx-1" style={{ color:"#ef3123" , fontWeight:'bold'}} to="/login">
                  Login                </Link>
 
-                <Link className="btn bg-white text-success mx-1"  to="/newuser">
+                <Link className="btn bg-white  mx-1" style={{ color:"#ef3123", fontWeight:'bold'}}  to="/newuser">
                 Sign Up 
                 </Link>
               </div>
