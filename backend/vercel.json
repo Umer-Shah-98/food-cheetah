@@ -1,0 +1,39 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "index.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/api/(.*)",
+        "dest": "index.js"
+      }
+    ],
+    "env": {
+      "MONGODB_URI": "mongodb://foodDesk:finalproject@ac-783time-shard-00-00.cutxrxs.mongodb.net:27017,ac-783time-shard-00-01.cutxrxs.mongodb.net:27017,ac-783time-shard-00-02.cutxrxs.mongodb.net:27017/foodDesk?ssl=true&replicaSet=atlas-8h9zcz-shard-0&authSource=admin&retryWrites=true&w=majority"
+    },
+    "headers": [
+      {
+        "source": "/api/(.*)",
+        "headers": [
+          { "key": "Access-Control-Allow-Origin", "value": "*" },
+          {
+            "key": "Access-Control-Allow-Methods",
+            "value": "GET, POST"
+          },
+          {
+            "key": "Access-Control-Allow-Headers",
+            "value": "Origin, X-Requested-With, Content-Type, Accept"
+          },
+          {
+            "key": "Access-Control-Allow-Credentials",
+            "value": "true"
+          }
+        ]
+      }
+    ]
+  }
+  
