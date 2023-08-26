@@ -75,7 +75,7 @@ const Card = (props) => {
             <select
               name="food-quantity"
               id="food-quantity"
-              className="m-2 h-100  rounded"
+              className="m-2 h-100 rounded border-0 bg-danger"
               style={{backgroundColor:'#ef3123', color:'white'}}
               onChange={(event) => setQuantity(event.target.value)}
             >
@@ -90,7 +90,7 @@ const Card = (props) => {
             <select
               name="food-size"
               id="food-size"
-              className="m-2 h-100  rounded"
+              className="m-2 h-100  rounded border-0 bg-danger"
               style={{backgroundColor:'#ef3123', color:'white'}}
               ref={priceRef}
               onChange={(event) => setSize(event.target.value)}
@@ -107,7 +107,7 @@ const Card = (props) => {
           </div>
           <hr></hr>
           <button
-            className="btn  justify-content-center mx-2"
+            className="btn  justify-content-center mx-2 bg-danger"
             style={{backgroundColor:'#ef3123', color:'white'}}
             onClick={handleAddToCart}
           >

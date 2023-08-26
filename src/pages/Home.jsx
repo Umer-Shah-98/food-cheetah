@@ -128,8 +128,8 @@ const Home = () => {
                         return (
                           <div 
                             key={filterItem._id}
-                            className="col-12 col-md-6 col-lg-3"
-                            style={{marginRight:'20px'}} 
+                            className="col-12 col-md-8 col-lg-3"
+                            // style={{marginRight:'20px'}} 
                           >
                             <Card
                               foodItem={filterItem}

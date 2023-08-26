@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const SignUp = () => {
+  const navigate=useNavigate();
   const [credentials, setCredentials] = useState({
     name: "",
     email: "",
@@ -32,6 +33,7 @@ const SignUp = () => {
     });
     const json = await response.json();
     console.log(json);
+    navigate('/');
     if (!json.success) {
       alert("Enter valid credentials, Try Again!!");
     }
@@ -39,9 +41,7 @@ const SignUp = () => {
   const onChange = (event) => {
     setCredentials({ ...credentials, [event.target.name]: event.target.value });
   };
-  function func() {
-    console.log("called");
-  }
+
   return (
     <>
       <div className="container">
