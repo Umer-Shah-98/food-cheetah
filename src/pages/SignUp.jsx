@@ -18,7 +18,7 @@ const SignUp = () => {
         location: credentials.geoLocation,
       })
     );
-    const response = await fetch("http://localhost:5000/api/newuser", {
+    const response = await fetch("http://localhost:3000/api/newuser", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -33,7 +33,7 @@ const SignUp = () => {
     });
     const json = await response.json();
     console.log(json);
-    navigate('/');
+    navigate('/login');
     if (!json.success) {
       alert("Enter valid credentials, Try Again!!");
     }

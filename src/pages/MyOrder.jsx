@@ -7,7 +7,7 @@ const MyOrder = () => {
 
   const fetchMyOrder = async () => {
     // console.log(localStorage.getItem("userEmail"));
-    await fetch("http://localhost:5000/api/myOrderData", {
+    await fetch("http://localhost:3000/api/myOrderData", {
       // credentials: 'include',
       // Origin:"http://localhost:3000/login",
       method: "POST",
@@ -33,7 +33,7 @@ const MyOrder = () => {
         <Navbar />
       </div>
 
-      <div className="container">
+      <div className="container border-0">
         <div className="row">
           {orderData !== {}
             ? Array(orderData).map((data) => {
@@ -59,7 +59,7 @@ const MyOrder = () => {
                                       maxHeight: "360px",
                                     }}
                                   >
-                                    <img
+                                    {/* <img
                                       src={arrayData.img}
                                       className="card-img-top"
                                       alt="..."
@@ -67,13 +67,13 @@ const MyOrder = () => {
                                         height: "120px",
                                         objectFit: "fill",
                                       }}
-                                    />
+                                    /> */}
                                     <div className="card-body">
                                       <h5 className="card-title">
                                         {arrayData.name}
                                       </h5>
                                       <div
-                                        className="container w-100 p-0"
+                                        className="container w-100 p-0 border-0"
                                         style={{ height: "38px" }}
                                       >
                                         <span className="m-1">

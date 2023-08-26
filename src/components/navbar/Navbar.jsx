@@ -15,9 +15,9 @@ const Navbar = () => {
   };
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-dark  navbar">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-danger  navbar">
         <div className="container-fluid">
-          <Link className="navbar-brand fs-1 fst-italic" to="#">
+          <Link className="navbar-brand fs-1 fst-italic" to="/">
           <h1> <span>Food</span>  <span>Cheetah</span>   </h1>  
           </Link>
 

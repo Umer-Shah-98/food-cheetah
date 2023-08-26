@@ -13,7 +13,7 @@ const Home = () => {
   const [foodCategory, setFoodCategory] = useState([]);
 
   const loadData = async () => {
-    let response = await fetch("http://localhost:5000/api/foodData", {
+    let response = await fetch("http://localhost:3000/api/foodData", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -110,7 +110,7 @@ const Home = () => {
           </button>
         </div>
       </div>
-      <div className="container" style={{  width:"200rem" }}>
+      <div className="container border-0" style={{  width:"200rem" }}>
         {foodCategory !== []
           ? foodCategory.map((data) => {
               return (

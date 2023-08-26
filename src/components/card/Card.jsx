@@ -58,8 +58,8 @@ const Card = (props) => {
     setSize(priceRef.current.value);
   }, []);
   return (
-    <div style={{ width:'30rem'  }} >
-      <div className="card mt-3" style={{ width: "18rem", borderRadius:'10px',  }}>
+    <div style={{ width:'30rem'  }}>
+      <div className="card mt-3 " style={{ width: "18rem", borderRadius:'10px',  }}>
         <img
           src={props.foodItem.img}
           className="card-img-top card-image"
@@ -68,14 +68,14 @@ const Card = (props) => {
         />
         <div className="card-body">
           <h5 className="card-title">{props.foodItem.name}</h5>
-          <div className="container w-100" style={{ display:"flex", paddingBottom:'30px'  }}>
+          <div className="container w-100 border-0" style={{ display:"flex", paddingBottom:'30px'  }}>
             
             
             
             <select
               name="food-quantity"
               id="food-quantity"
-              className="m-2 h-100 rounded border-0 bg-danger"
+              className="m-1 h-100 rounded border-0 bg-danger px-2 py-1"
               style={{backgroundColor:'#ef3123', color:'white'}}
               onChange={(event) => setQuantity(event.target.value)}
             >
@@ -90,7 +90,7 @@ const Card = (props) => {
             <select
               name="food-size"
               id="food-size"
-              className="m-2 h-100  rounded border-0 bg-danger"
+              className="m-1 h-100  rounded border-0 bg-danger px-2 py-1"
               style={{backgroundColor:'#ef3123', color:'white'}}
               ref={priceRef}
               onChange={(event) => setSize(event.target.value)}

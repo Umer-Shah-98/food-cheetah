@@ -24,7 +24,7 @@ h1 {
     margin-right: 1px;
   }
   h1:hover span:nth-child(1):after {
-    content: "'";
+    content: "";
   }
   h1:hover span:nth-child(2) {
     margin-left: 20px;
