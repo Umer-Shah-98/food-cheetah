@@ -11,12 +11,12 @@ const Login = () => {
   });
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(
-      JSON.stringify({
-        email: credentials.email,
-        password: credentials.password,
-      })
-    );
+    // console.log(
+    //   JSON.stringify({
+    //     email: credentials.email,
+    //     password: credentials.password,
+    //   })
+    // );
     const response = await fetch("http://localhost:3000/api/loginuser", {
       method: "POST",
       headers: {
@@ -29,14 +29,14 @@ const Login = () => {
       }),
     });
     const json = await response.json();
-    console.log(json);
+    // console.log(json);
     if (!json.success) {
       alert("Enter valid credentials, Try Again!!");
     }
     if(json.success){
       localStorage.setItem("userEmail", credentials.email);
       localStorage.setItem("authToken", json.authToken);
-      console.log(localStorage.getItem("authToken"));
+      // console.log(localStorage.getItem("authToken"));
       navigate("/");
     }
   };
@@ -50,7 +50,7 @@ const Login = () => {
 
       <div className="container">
         <form onSubmit={handleSubmit}>
-          <div className="sign-in-up"><h2>SIGN IN</h2></div>
+          <div className="sign-in-up bg-white font-weight-bold"><h2>LOGIN</h2></div>
           <div className="mb-3">
             <label htmlFor="exampleInputEmail1" className="form-label">
               Email address
@@ -64,7 +64,7 @@ const Login = () => {
               aria-describedby="emailHelp"
               onChange={onChange}
             />
-            <div id="emailHelp" className="form-text">
+            <div id="emailHelp" className="form-text text-white">
               We'll never share your email with anyone else.
             </div>
           </div>

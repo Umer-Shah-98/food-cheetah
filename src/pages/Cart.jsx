@@ -41,7 +41,7 @@ export default function Cart() {
   let totalPrice = data.reduce((total, food) => total + food.price, 0);
   return (
     <div>
-      {console.log(data)}
+      {/* {console.log(data)} */}
       <div className="container m-auto mt-5 table-responsive  table-responsive-sm table-responsive-md" style={{ backgroundColor:"white"}}>
         <table className="table table-hover ">
           <thead className="  fs-4">
@@ -63,7 +63,7 @@ export default function Cart() {
                 <td>{food.size}</td>
                 <td>{food.price}</td>
                 <td>
-                  <button type="button" className="btn p-0 text-white">
+                  <button type="button" className="btn p-0 text-white bg-danger">
                     <Delete
                       onClick={() => {
                         dispatch({ type: "REMOVE", index: index });
@@ -78,7 +78,7 @@ export default function Cart() {
         <div>
           <h1 className="fs-2 text-white">Total Price: {totalPrice}/-</h1>
         </div>
-        <div>
+        <div className="p-4">
           <button className="btn bg-success mt-5 " onClick={handleCheckOut}>
             {" "}
             Check Out{" "}

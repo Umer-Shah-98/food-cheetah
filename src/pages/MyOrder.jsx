@@ -35,7 +35,7 @@ const MyOrder = () => {
 
       <div className="container border-0">
         <div className="row">
-          {orderData !== {}
+          {Object.keys(orderData).length !== 0
             ? Array(orderData).map((data) => {
                 return data.orderData
                   ? data.orderData.order_data

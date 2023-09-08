@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./card.css";
-import greenAvocado from "../../assets/green-avocado.jpg";
 import { useCart, useDispatchCart } from "../hooks/ContextReducer";
 const Card = (props) => {
   const priceRef = useRef();
@@ -19,7 +18,7 @@ const Card = (props) => {
         break;
       }
     }
-    if (food !== []) {
+    if (food.length !== 0) {
       if (food.size === size) {
         await dispatch({
           type: "UPDATE",
@@ -58,8 +57,8 @@ const Card = (props) => {
     setSize(priceRef.current.value);
   }, []);
   return (
-    <div style={{ width:'30rem'  }}>
-      <div className="card mt-3 " style={{ width: "18rem", borderRadius:'10px',  }}>
+    <div style={{ width:'18rem'  }}>
+      <div className="card border-0 " style={{ width: "18rem", marginTop:"3rem" }}>
         <img
           src={props.foodItem.img}
           className="card-img-top card-image"
@@ -68,7 +67,7 @@ const Card = (props) => {
         />
         <div className="card-body">
           <h5 className="card-title">{props.foodItem.name}</h5>
-          <div className="container w-100 border-0" style={{ display:"flex", paddingBottom:'30px'  }}>
+          <div className="container-fluid w-100 border-0" style={{ display:"flex", paddingLeft:0}}>
             
             
             
@@ -103,7 +102,7 @@ const Card = (props) => {
                 );
               })}
             </select>
-            <div className="total-price d-inline fs-5" style={{ color:'red', paddingTop:'2px'}} >Rs.{totalPrice}/-</div>
+            <div className="total-price d-inline fs-5" style={{textAlign:"end", color:'red', paddingTop:'2px'}} >Rs.{totalPrice}/-</div>
           </div>
           <hr></hr>
           <button

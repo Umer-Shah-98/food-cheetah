@@ -10,14 +10,14 @@ const SignUp = () => {
   });
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(
-      JSON.stringify({
-        name: credentials.name,
-        email: credentials.email,
-        password: credentials.password,
-        location: credentials.geoLocation,
-      })
-    );
+    // console.log(
+    //   JSON.stringify({
+    //     name: credentials.name,
+    //     email: credentials.email,
+    //     password: credentials.password,
+    //     location: credentials.geoLocation,
+    //   })
+    // );
     const response = await fetch("http://localhost:3000/api/newuser", {
       method: "POST",
       headers: {
@@ -32,7 +32,7 @@ const SignUp = () => {
       }),
     });
     const json = await response.json();
-    console.log(json);
+    // console.log(json);
     navigate('/login');
     if (!json.success) {
       alert("Enter valid credentials, Try Again!!");

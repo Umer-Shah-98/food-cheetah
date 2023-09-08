@@ -111,13 +111,13 @@ const Home = () => {
         </div>
       </div>
       <div className="container border-0" style={{  width:"200rem" }}>
-        {foodCategory !== []
+        {foodCategory.length !== 0
           ? foodCategory.map((data) => {
               return (
                 <div key={data._id} className="row mb-3">
                   <div className="fs-3 m-3">{data.CategoryName}</div>
                   <hr />
-                  {foodItems !== [] ? (
+                  {foodItems.length !== 0 ? (
                     foodItems
                       .filter(
                         (item) =>
